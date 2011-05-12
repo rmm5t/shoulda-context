@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class ContextTest < Test::Unit::TestCase # :nodoc:
+  if defined?(::MiniTest)
+    def to_s
+      __name__
+    end
+  end
 
   def self.context_macro(&blk)
     context "with a subcontext made by a macro" do
